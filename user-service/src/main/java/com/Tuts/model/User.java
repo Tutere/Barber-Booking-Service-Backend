@@ -2,7 +2,19 @@ package com.Tuts.model;
 
 import java.time.LocalDateTime;
 
+import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+//annotation to specify that the class is an entity
+//Entity is a class that represents a table in database
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = jakarta.persistence.GenerationType.AUTO)
+    private long id;
 
     public String fullname;
 
@@ -76,5 +88,13 @@ public class User {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 }
