@@ -2,10 +2,15 @@ package com.Tuts.model;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 
 //annotation to specify that the class is an entity
 //Entity is a class that represents a table in database
@@ -18,15 +23,26 @@ public class User {
 
     public String fullname;
 
+    @NotBlank(message = "Username is mandatory")
+    private String username;
+
+    @NotBlank(message = "Email is mandatory")
+    @Email(message = "Email should be valid")
     public String email;
 
     public String phone;
 
+    @NotBlank(message = "Role is mandatory")
     public String role;
 
+    @CreationTimestamp
     public LocalDateTime createdAt;
 
+    @UpdateTimestamp
     public LocalDateTime updatedAt;
+
+    @NotBlank(message = "Password is mandatory")
+    private String password;
 
     public User() {
 
@@ -97,4 +113,13 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
 }

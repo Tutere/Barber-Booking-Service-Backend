@@ -3,6 +3,8 @@ package com.Tuts.controller;
 import com.Tuts.model.User;
 import com.Tuts.repository.UserRepository;
 
+import jakarta.validation.Valid;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -22,7 +24,7 @@ public class UserController {
     private UserRepository userRepository;
 
     @PostMapping("/api/users")
-    public User creatUser(@RequestBody User user) {
+    public User creatUser(@RequestBody @Valid User user) {
         return userRepository.save(user);
     }
 
