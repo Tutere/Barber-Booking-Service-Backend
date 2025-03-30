@@ -1,5 +1,6 @@
 package com.Tuts.controller;
 
+import com.Tuts.exception.UserException;
 import com.Tuts.model.User;
 import com.Tuts.repository.UserRepository;
 
@@ -41,14 +42,14 @@ public class UserController {
         if (user.isPresent()) {
             return user.get();
         }
-        throw new Exception("User not found");
+        throw new UserException("User not found");
     }
 
     @PutMapping("/api/users/{userId}")
     public User updateUser(@RequestBody User user, @PathVariable("userId") Long id) throws Exception {
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isEmpty()) {
-            throw new Exception("User not found with id: " + id);
+            throw new UserException("User not found with id: " + id);
         }
         User existingUser = userOptional.get();
 
@@ -64,7 +65,7 @@ public class UserController {
     public String deleteUserById(@PathVariable("userId") Long id) throws Exception {
         Optional<User> userOptional = userRepository.findById(id);
         if (userOptional.isEmpty()) {
-            throw new Exception("User not found with id: " + id);
+            throw new UserException("User not found with id: " + id);
         }
         userRepository.deleteById(userOptional.get().getId());
         return "User deleted successfully";
