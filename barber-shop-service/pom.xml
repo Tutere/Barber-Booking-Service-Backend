@@ -10,10 +10,10 @@
         <relativePath /> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.Tuts</groupId>
-    <artifactId>barber-service</artifactId>
+    <artifactId>barber-shop-service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>barber-service</name>
-    <description>barber service for barber booking system</description>
+    <name>barber-shop-service</name>
+    <description>barber shop microservice for barber booking system</description>
     <url />
     <licenses>
         <license />

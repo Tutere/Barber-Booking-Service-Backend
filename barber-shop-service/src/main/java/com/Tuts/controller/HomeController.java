@@ -8,6 +8,6 @@ public class HomeController {
 
     @GetMapping
     public String HomeController() {
-        return "user microservice for barber booking system";
+        return "barber shop microservice for barber booking system";
     }
 }

@@ -19,6 +19,16 @@
             "projectName": "barber-service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-BarberShopServiceApplication<barber-shop-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.Tuts.BarberShopServiceApplication",
+            "projectName": "barber-shop-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
