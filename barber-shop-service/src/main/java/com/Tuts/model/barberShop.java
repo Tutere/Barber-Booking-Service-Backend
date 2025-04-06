@@ -15,7 +15,7 @@ import lombok.Getter;
 @Entity
 @Data // Lombok will generate getters, setters, toString, equals, hashCode methods and
       // constructors
-public class barberShop {
+public class BarberShop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
