@@ -3,6 +3,10 @@ package com.Tuts.payload;
 import java.time.LocalTime;
 import java.util.List;
 
+import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
+
+import com.Tuts.payload.dto.UserDTO;
+
 import jakarta.persistence.ElementCollection;
 import lombok.Data;
 
@@ -26,6 +30,9 @@ public class BarberShopDTO {
     private String city;
 
     private Long ownerId;
+
+    private UserDTO owner; // why we need to use DTO. We don't want to expose the whole user object and in
+                           // barber shop class we only need the id of the owner
 
     private LocalTime openingTime;
 

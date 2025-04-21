@@ -56,8 +56,7 @@ public class BarberShopServiceImpl implements BarberShopService {
 
     @Override
     public List<BarberShop> getAllBarberShops() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllBarberShops'");
+        return barberShopRepository.findAll();
     }
 
     @Override
