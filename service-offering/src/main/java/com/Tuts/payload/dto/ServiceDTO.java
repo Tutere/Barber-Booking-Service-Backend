@@ -16,7 +16,7 @@ public class ServiceDTO {
 
     private Long barberShopId;
 
-    private Long categoryId;
+    private Long category;
 
     private String image;
 }

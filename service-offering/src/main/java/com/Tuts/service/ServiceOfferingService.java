@@ -11,9 +11,11 @@ public interface ServiceOfferingService {
 
     ServiceOffering createService(BarberShopDTO barberShopDTO, ServiceDTO serviceDTO, CategoryDTO categoryDTO);
 
-    ServiceOffering updateService(Long serviceId, ServiceOffering service);
+    ServiceOffering updateService(Long serviceId, ServiceOffering service) throws Exception;
 
     Set<ServiceOffering> getAllServiceBySalonId(Long barbershopId, Long categoryId);
 
     Set<ServiceOffering> getServicesByIds(Set<Long> ids);
+
+    ServiceOffering getServiceById(Long serviceId) throws Exception;
 }
