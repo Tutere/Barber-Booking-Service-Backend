@@ -39,6 +39,16 @@
       "projectName": "category-service",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-ServiceOfferingApplication<service-offering>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.Tuts.ServiceOfferingApplication",
+      "projectName": "service-offering",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
