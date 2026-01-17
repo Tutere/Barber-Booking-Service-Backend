@@ -14,7 +14,7 @@ import com.Tuts.payload.dto.UserDTO;
 
 public interface BookingService {
     Booking createBooking(BookingRequest booking, UserDTO userDTO, BarberShopDTO barberShopDTO,
-            Set<ServiceDTO> serviceDTOs);
+            Set<ServiceDTO> serviceDTOs) throws Exception;
 
     List<Booking> getBookingsByCustomerId(Long customerId);
 

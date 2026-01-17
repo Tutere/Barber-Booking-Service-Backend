@@ -20,7 +20,7 @@ public class Booking {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long id;
 
-    private Long salonId;
+    private Long barberShopId;
 
     private Long customerId;
 
