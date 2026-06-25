@@ -2,15 +2,12 @@ package com.Tuts.exception;
 
 import java.time.LocalDateTime;
 
-import org.springframework.boot.actuate.autoconfigure.metrics.MetricsProperties.Web;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.context.request.WebRequest;
 
 import com.Tuts.payload.response.ExceptionResponse;
-
-import io.micrometer.core.ipc.http.HttpSender.Response;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {

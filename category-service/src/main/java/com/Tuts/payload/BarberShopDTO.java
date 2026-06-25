@@ -3,8 +3,6 @@ package com.Tuts.payload;
 import java.time.LocalTime;
 import java.util.List;
 
-import org.springframework.boot.autoconfigure.security.SecurityProperties.User;
-
 import com.Tuts.payload.dto.UserDTO;
 
 import jakarta.persistence.ElementCollection;
