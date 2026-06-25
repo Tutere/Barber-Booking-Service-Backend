@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.Tuts.domain.PaymentMethod;
+import com.Tuts.domain.PaymentOrderStatus;
 import com.Tuts.model.PaymentOrder;
 import com.Tuts.payload.dto.BookingDTO;
 import com.Tuts.payload.dto.UserDTO;
@@ -85,4 +86,16 @@ public class PaymentServiceImpl implements PaymentService {
         return session.getUrl();
     }
 
+    @Override
+    public boolean proceedPaymentStatus(PaymentOrder paymentOrder, String paymentId, String paymentLinkId) {
+        if (paymentOrder.getStatus().equals(PaymentOrderStatus.PENDING)) {
+            // produce kafka event
+
+            paymentOrder.setStatus(PaymentOrderStatus.SUCCESS);
+            paymentOrderRepository.save(paymentOrder);
+            return true;
+        }
+        return false;
+
+    }
 }

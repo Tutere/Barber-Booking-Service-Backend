@@ -19,4 +19,7 @@ public interface PaymentService {
             Double amount,
             Long orderId) throws StripeException;
 
+    boolean proceedPaymentStatus(PaymentOrder paymentOrder,
+            String paymentId,
+            String paymentLinkId);
 }
