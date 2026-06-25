@@ -19,7 +19,7 @@ public class PaymentOrder {
     private Long id;
 
     @Column(nullable = false)
-    private Long amount;
+    private Double amount;
 
     @Column(nullable = false)
     private PaymentOrderStatus status = PaymentOrderStatus.PENDING;
@@ -36,5 +36,5 @@ public class PaymentOrder {
     private Long bookingId;
 
     @Column(nullable = false)
-    private Long salonId;
+    private Long barberShopId;
 }
