@@ -1,0 +1,58 @@
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      server:
+        webflux:
+          discovery:
+            locator:
+              enabled: true
+          routes:
+            #lb is used to load balance the requests to the instances of the service registered with eureka
+            - id: booking-service
+              uri: lb://booking-service
+              predicates:
+                - Path=/api/bookings/**
+
+            - id: payment-service
+              uri: lb://payment-service
+              predicates:
+                - Path=/api/payments/**
+
+            - id: category-service
+              uri: lb://category-service
+              predicates:
+                - Path=/api/categories/**
+
+            - id: barber-shop-service
+              uri: lb://barber-shop-service
+              predicates:
+                - Path=/barbershops/**,/api/barbershops/**,/api/admin/barbershops/**
+
+            - id: service-offering-service
+              uri: lb://service-offering
+              predicates:
+                - Path=/api/service-offering/**,/api/service-offering/barbershop-owner/**
+
+            - id: user-service
+              uri: lb://user-service
+              predicates:
+                - Path=/auth/**,/api/admin/users/**,/api/users/**,/users/**
+
+            # - id: notification-service
+            #   uri: lb://notification-service
+            #   predicates:
+            #     - Path=/api/notifications/**,/api/notifications/barbershop-owner/**
+
+server:
+  port: 5007
+
+eureka:
+  instance:
+    prefer-ip-address: true
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: "http://localhost:8070/eureka/"
